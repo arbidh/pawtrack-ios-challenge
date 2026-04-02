@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Biscuit",
+    "type": "dog",
+    "breed": "Golden Retriever",
+    "age": 4,
+    "weight": 65,
+    "temperament": "friendly",
+    "feedingInstructions": "1 cup dry food + medication pill tucked in a treat",
+    "vetContact": "Dr. Patel — (555) 234-5678"
+  },
+  {
+    "name": "Mochi",
+    "type": "cat",
+    "breed": "Ragdoll",
+    "age": 2,
+    "weight": 10,
+    "temperament": "calm",
+    "feedingInstructions": "Half can wet food per visit",
+    "vetContact": "Riverside Vet Clinic — (555) 345-6789"
+  },
+  {
+    "name": "Duke",
+    "type": "dog",
+    "breed": "German Shepherd",
+    "age": 6,
+    "weight": 85,
+    "temperament": "energetic",
+    "feedingInstructions": "2 cups dry food, bowl by back door",
+    "vetContact": "Dr. Kim — (555) 456-7890"
+  },
+  {
+    "name": "Bella",
+    "type": "dog",
+    "breed": "Labrador Mix",
+    "age": 3,
+    "weight": 55,
+    "temperament": "anxious",
+    "feedingInstructions": "1.5 cups dry food, treats for positive reinforcement",
+    "vetContact": "Happy Paws Vet — (555) 567-8901"
+  },
+  {
+    "name": "Whiskers",
+    "type": "cat",
+    "breed": "Domestic Shorthair",
+    "age": 8,
+    "weight": 12,
+    "temperament": "independent",
+    "feedingInstructions": "Dry food in shared bowl for both cats",
+    "vetContact": "Dr. Nguyen — (555) 678-9012"
+  },
+  {
+    "name": "Cooper",
+    "type": "dog",
+    "breed": "Beagle",
+    "age": 5,
+    "weight": 30,
+    "temperament": "friendly",
+    "feedingInstructions": "1 cup dry food morning and evening",
+    "vetContact": "Elm Street Animal Hospital — (555) 789-0123"
+  },
+  {
+    "name": "Luna",
+    "type": "cat",
+    "breed": "Russian Blue",
+    "age": 4,
+    "weight": 9,
+    "temperament": "shy",
+    "feedingInstructions": "Dry food and fresh water daily",
+    "vetContact": "Dr. Martinez — (555) 890-1234"
+  },
+  {
+    "name": "Rocky",
+    "type": "dog",
+    "breed": "Boxer",
+    "age": 7,
+    "weight": 70,
+    "temperament": "playful",
+    "feedingInstructions": "1.5 cups dry food, no table scraps",
+    "vetContact": "Sunset Veterinary — (555) 901-2345"
+  }
+]

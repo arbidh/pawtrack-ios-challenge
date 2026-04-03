@@ -13,11 +13,16 @@ A previous developer started this project but left. You're picking it up. **Comp
 ## Getting Started
 
 1. Clone this repository
-2. Open the Xcode project (`PawTrack.xcodeproj`)
-3. Review the existing code in `PawTrack/` — models, services, and view models have been started
-4. Mock data is provided in `MockData/` — use it in place of a real API
-5. Build the required features below
-6. Fill in `DECISIONS.md` with your reasoning
+2. Generate the Xcode project (requires [XcodeGen](https://github.com/yonaskolb/XcodeGen)):
+   ```bash
+   brew install xcodegen   # if not already installed
+   xcodegen generate
+   ```
+3. Open `PawTrack.xcodeproj`
+4. Review the existing code in `PawTrack/` — models, services, and view models have been started
+5. Mock data is provided in `MockData/` — use it in place of a real API
+6. Build the required features below
+7. Fill in `DECISIONS.md` with your reasoning
 
 ## Required Features
 

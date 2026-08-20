@@ -71,12 +71,12 @@ Filter visits by status and search by pet name or address. Filter state should s
 ## Submission
 
 1. Fill in `DECISIONS.md` completely
-2. Ensure the project builds and runs on the latest Xcode (16+) / iOS 17+
+2. Ensure the project builds and runs on the latest Xcode (26+) / iOS 26+
 3. Submit via [instructions will be provided]
 
 ## Tech Requirements
 
 - **Swift 5.9+**
-- **iOS 17+** deployment target
+- **iOS 26+** deployment target
 - **SwiftUI** preferred for the UI layer (UIKit is acceptable where it makes sense)
 - No third-party dependencies required (you may use them if you feel strongly, but document why in `DECISIONS.md`)

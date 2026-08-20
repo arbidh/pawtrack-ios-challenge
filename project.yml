@@ -2,8 +2,8 @@ name: PawTrack
 options:
   bundleIdPrefix: com.pawtrack
   deploymentTarget:
-    iOS: "17.0"
-  xcodeVersion: "16.0"
+    iOS: "26.0"
+  xcodeVersion: "26.0"
   generateEmptyDirectories: true
 
 settings:

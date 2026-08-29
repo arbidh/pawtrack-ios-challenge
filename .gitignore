@@ -1,4 +1,6 @@
 # Xcode
+# The project is generated from project.yml — see the README's setup steps.
+*.xcodeproj/
 *.xcodeproj/project.xcworkspace/
 *.xcodeproj/xcuserdata/
 *.xcworkspace/xcuserdata/

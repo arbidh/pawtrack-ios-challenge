@@ -9,6 +9,9 @@ options:
 settings:
   base:
     SWIFT_VERSION: "5.9"
+    # The code is clean under complete checking (and in Swift 6 language mode), so the
+    # guarantee is enforced by the compiler rather than left to review.
+    SWIFT_STRICT_CONCURRENCY: complete
     DEVELOPMENT_TEAM: ""
 
 targets:
@@ -28,3 +31,32 @@ targets:
         INFOPLIST_KEY_UILaunchScreen_Generation: true
         INFOPLIST_KEY_NSCameraUsageDescription: "PawTrack needs camera access to capture visit photos."
         INFOPLIST_KEY_NSPhotoLibraryUsageDescription: "PawTrack needs photo library access to select visit photos."
+
+  # Added: the starter had no test target.
+  PawTrackTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: PawTrackTests
+    dependencies:
+      - target: PawTrack
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.pawtrack.app.tests
+        GENERATE_INFOPLIST_FILE: true
+        # Xcode adds these to its own test targets implicitly; XcodeGen does not, and
+        # without them swift-testing's Testing.framework never links and every @Test is
+        # silently skipped.
+        ENABLE_TESTING_SEARCH_PATHS: true
+
+schemes:
+  PawTrack:
+    build:
+      targets:
+        PawTrack: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - PawTrackTests

@@ -64,4 +64,18 @@ struct VisitTests {
         let cancelled = visit(.cancelled).keepingProgress(of: mine)
         #expect(cancelled.status == .cancelled)
     }
+
+    @Test("An unrecognised status is inert, not silently advanceable")
+    func unknownStatus() {
+        let status = VisitStatus(rawValue: "awaiting_key_handoff")
+        #expect(status == .unknown("awaiting_key_handoff"))
+        #expect(status.next == nil, "Never offer an action for a state we can't reason about")
+        #expect(status.rawValue == "awaiting_key_handoff", "Round-trips through the cache")
+        #expect(status.title == "Awaiting Key Handoff")
+
+        var visit = Visit(id: "v", petType: "dog", ownerName: "O", status: status)
+        #expect(throws: Visit.TransitionError.alreadyFinished(status)) {
+            try visit.advance(to: .enRoute, at: .now)
+        }
+    }
 }

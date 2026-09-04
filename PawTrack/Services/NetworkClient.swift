@@ -127,7 +127,9 @@ private enum Wire {
                 photos: (json.photos ?? []).map {
                     Visit.Photo(id: $0, at: start ?? .distantPast, isLocal: false)
                 },
-                status: json.status.flatMap(VisitStatus.init(rawValue:)) ?? .upcoming
+                // A missing status defaults to upcoming; an unrecognised one becomes
+                // `.unknown`, which is inert rather than advanceable.
+                status: json.status.map(VisitStatus.init(rawValue:)) ?? .upcoming
             )
         }
         // Unscheduled last, then by id so the order is stable.

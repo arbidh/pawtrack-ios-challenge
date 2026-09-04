@@ -8,9 +8,9 @@ options:
 
 settings:
   base:
-    SWIFT_VERSION: "5.9"
-    # The code is clean under complete checking (and in Swift 6 language mode), so the
-    # guarantee is enforced by the compiler rather than left to review.
+    SWIFT_VERSION: "6.0"
+    # Swift 6 language mode, not just complete checking under Swift 5: data-race safety is
+    # an error the compiler enforces rather than a warning left to review.
     SWIFT_STRICT_CONCURRENCY: complete
     DEVELOPMENT_TEAM: ""
 

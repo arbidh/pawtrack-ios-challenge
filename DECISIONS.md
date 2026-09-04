@@ -182,11 +182,12 @@ and downsampled to the size actually displayed.
 
 ## Testing
 
-Eight tests, aimed at what would quietly lose a sitter's work rather than at coverage.
+Ten tests, aimed at what would quietly lose a sitter's work rather than at coverage.
 
 Transitions: skipping, going backwards and both terminal states are rejected; each step
 records its own timestamp; a refresh can't undo local progress, and a cancellation still
-wins.
+wins. A status this build has never heard of decodes to `unknown`, which has no successor,
+so it can't be handed a *Start driving* button.
 
 Decoding: the repairs above, run against the real bundled `visits.json`. All of these fail
 against the original `Visit`, so they pin the bug that made the app show nothing.

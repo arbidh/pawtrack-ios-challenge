@@ -34,12 +34,7 @@ struct VisitListView: View {
             list
 
         case .loading:
-            VStack(spacing: 12) {
-                ProgressView()
-                Text("Loading today's visits…").font(.subheadline).foregroundStyle(.secondary)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .accessibilityElement(children: .combine)
+            VisitListSkeleton()
 
         case .empty:
             ContentUnavailableView("No visits today", systemImage: "calendar.badge.checkmark",

@@ -27,6 +27,11 @@ struct VisitDetailView: View {
             .alert("Couldn't do that", isPresented: hasError, presenting: model.errorMessage) { _ in
                 Button("OK", role: .cancel) { model.errorMessage = nil }
             } message: { Text($0) }
+            // The failure deserves the same channel as the success. A rejected check-in
+            // is exactly the moment the sitter isn't watching the screen.
+            .sensoryFeedback(trigger: model.errorMessage) { _, new in
+                new == nil ? nil : .error
+            }
             // Deleting proof of service is worth one confirmation.
             .confirmationDialog(
                 "Delete this photo?",

@@ -160,15 +160,27 @@ extension VisitSections {
                     advanceButton(to: next)
                         .transition(.opacity)
                 } else {
-                    Label(visit.status == .completed ? "Visit complete."
-                                                     : "The office cancelled this visit.",
-                          systemImage: visit.status.symbol)
+                    Label(visit.status.terminalMessage, systemImage: visit.status.symbol)
                         .font(.subheadline).foregroundStyle(visit.status.tint)
                 }
             }
             // Checking in changes three things at once — the trail, the button and the
             // badge — so they move together.
             .animatedChange(visit.status, reduceMotion: reduceMotion)
+            // A check-in is a physical act, usually one-handed with a lead in the other,
+            // and often without looking. Finishing the visit gets the success tap; the
+            // steps on the way get a lighter one.
+            .sensoryFeedback(trigger: visit.status) { old, new in
+                guard old != new else { return nil }
+                // `cancelled` and `unknown` arrive from the office on a refresh, not from
+                // this button — a congratulatory tap for either would be a lie.
+                let feedback: SensoryFeedback? = switch new {
+                case .completed: .success
+                case .enRoute, .inProgress: .impact(weight: .medium)
+                case .upcoming, .cancelled, .unknown: nil
+                }
+                return feedback
+            }
         }
 
         private func advanceButton(to next: VisitStatus) -> some View {
